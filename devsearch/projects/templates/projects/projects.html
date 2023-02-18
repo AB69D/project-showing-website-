@@ -1,9 +1,39 @@
-{% extends 'main.html' %}
+{% extends "main.html" %}
+
 {% block content %}
-{% for project in projects %}
-<!-- <li>Title : <a href="{% url 'project' project.id %}">{{project.title}}</a></li>-->
-<li>Title : {{project.title}}</li>
-{% endfor %} 
+{{msg}}
+
+{% if num > 10 %}
+
+<p>number is greater then ten</p>
+
+{% elif num == 10 %}
+
+<p>number is equle to ten</p>
+
+{% else %}
+<p> numebr is less then ten </p>
+
+{% endif %}
+<hr>
+<h1> Ptojects </h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Votes</th>
+    <th>Ratio</th>
+    <th>Created Time</th>
+  </tr>
+  {% for project in projects %}
+  <tr>
+    <td><a href="{% url 'project' project.id %}">{{project.title}}</a></td>
+    <td>{{project.vote_total}}</td>
+    <td>{{project.vote_ratio}}</td>
+    <td>{{project.created}}</td>
+    
+  </tr>
+  {% endfor %}
+</table>
 
 {% endblock content %}
 
