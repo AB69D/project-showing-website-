@@ -1,7 +1,16 @@
-{% extends 'main.html' %}
+{% extends "main.html" %}
+
 {% block content %}
 
-    <h1>this is single page template file </h1>
+<h1>Title : {{project.title}} </h1>
+<h3>Created : {{project.created}} </h3>
+
+<h4>Tags of that project </h4>
+<ul>
+{% for tag in tags %}
+<li>{{tag}}</li>
+
+{% endfor %}
+</ul>
 
 {% endblock content %}
-
