@@ -1,7 +1,9 @@
 {% extends 'main.html' %}
 {% block content %}
-
-   <h1> this is projests.html File </h1> 
+{% for project in projects %}
+<!-- <li>Title : <a href="{% url 'project' project.id %}">{{project.title}}</a></li>-->
+<li>Title : {{project.title}}</li>
+{% endfor %} 
 
 {% endblock content %}
 
