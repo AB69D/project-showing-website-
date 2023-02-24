@@ -1,12 +1,23 @@
-<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+
+{% load static %}
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<div class="logo">
+  <img src="{% static 'images/logo.svg' %}">
+
+</div>
+
+
 <div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
+  <a href="{% url 'projects' %}" class="active">Home</a>
   <a href="#news">News</a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
+  <hr>
+  <a href="{% url 'createproject' %}">add project</a>
+
 </div>
