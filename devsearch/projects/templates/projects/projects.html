@@ -2,7 +2,7 @@
 
 {% block content %}
 <hr>
-<h1> Ptojects </h1>
+<h2> Ptojects </h2>
 <table>
   <tr>
     <th>Title</th>
@@ -16,7 +16,7 @@
   <tr>
     <td><a href="{% url 'project' project.id %}">{{project.title}}</a></td>
     <td>{{project.vote_total}}</td>
-    <td>{{project.vote_ratio}}</td>
+    <td>{{project.vote_ratio}}%</td>
     <td>{{project.created}}</td>
     <td><a href="{% url 'updateproject' project.id %}">Update</a></td>
     <td><a href="{% url 'delete' project.id %}">Delete</a></td>
